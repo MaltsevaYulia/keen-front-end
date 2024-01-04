@@ -7,7 +7,7 @@
   border-radius: 10px;
   margin-bottom: 12px;
   padding: 10px 11px 12px 16px;
-  width: 618px;
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -41,40 +41,44 @@
   }
 
   .status {
-    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
     line-height: 22.04px;
 
-    &__title {
-      margin-right: 20px;
-    }
-
-    &__value {
-      margin-right: 2px;
-    }
-
     &__arrow {
-      width: 10px;
-      height: 5px;
-      padding: 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
       border: none;
       background-color: transparent;
-      background-image: url('/assets/arrow-down.svg');
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
+      transition: all 250ms ease-in-out;
 
       &:hover {
         transform: scale(1.2);
       }
     }
 
+    &__iconBox{
+    transition: all 250ms ease-in-out;
+    }
+
+    &__iconBoxOpen {
+      rotate: (180deg);
+    }
+
+    &__optionsBox {
+      position: relative;
+    }
+
     &__options {
       position: absolute;
-      right: 0;
       z-index: 1;
       display: flex;
       flex-direction: column;
-      //   background-color: transparentize($color: $color-font-light, $amount: 0.2);
       padding: 5px;
       border-radius: 5px;
     }

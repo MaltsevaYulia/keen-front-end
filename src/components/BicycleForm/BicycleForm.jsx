@@ -1,18 +1,37 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Form, Formik } from 'formik';
 import TextField from 'components/Formik/TextField';
 import validationSchema from 'schemas/validationSchema';
 
 import styles from './BicycleForm.module.scss';
 import TextareaField from 'components/Formik/TextareaField';
+import { addBicycle } from 'store/operations';
+import { selectError, selectBicycles } from 'store/selectors';
+import { store } from 'store/store';
+import statuses from 'constants/statuses';
 
 const BicycleForm = () => {
-    const handleSubmit = (values, actions) => {
-      console.log("🚀 ~ handleSubmit ~ actions:", actions)
-        console.log("🚀 ~ handleSubmit ~ values:", values)
-        actions.resetForm();
+  const bicycles = useSelector(selectBicycles);
+  const error = useSelector(selectError);
+  const dispatch = useDispatch();
 
-      
+  const validateId = value => {
+    let error;
+    const isIdUnique = !bicycles.some(bicycle => bicycle.id === value);
+    if (!isIdUnique) {
+      error = 'ID must be unique';
+    }
+    return error;
+  };
+
+  const handleSubmit = (values, actions) => {
+    
+    dispatch(addBicycle({ ...values, status: statuses[0] }));
+
+    if (!error) {
+      actions.resetForm();
+    }
   };
 
   return (
@@ -29,6 +48,7 @@ const BicycleForm = () => {
       }}
       validationSchema={validationSchema}
       onSubmit={(values, actions) => handleSubmit(values, actions)}
+      context={{ store: store }}
     >
       {({ isSubmitting }) => (
         <Form className={styles.form}>
@@ -71,6 +91,7 @@ const BicycleForm = () => {
                 name="id"
                 type="text"
                 placeholder="ID (slug): ХХХХХХХХХХХХХ"
+                validate={validateId}
               />
             </div>
           </div>
@@ -85,6 +106,7 @@ const BicycleForm = () => {
               className={styles.form__btn}
               type="submit"
               disabled={isSubmitting}
+              arial-label="add bicycle advertisement"
             >
               Save
             </button>
@@ -92,6 +114,7 @@ const BicycleForm = () => {
               className={styles.form__btn}
               type="reset"
               disabled={isSubmitting}
+              arial-label="clear bicycle form"
             >
               Clear
             </button>
