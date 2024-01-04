@@ -1,8 +1,43 @@
+
+
+@font-face {
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Saira Regular'), local('Saira-Regular'), url(/public/fonts/Saira-Regular.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: "Saira Stencil One";
+  font-style: normal;
+  font-weight: 700;
+  src: local('Saira Bold'), local('Saira-Bold'), url(/public/fonts/Saira-Bold.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Saira Regular'), local('Saira-Regular'), url(/public/fonts/SairaStencilOne-Regular.ttf) format('ttf');
+}
+
 @import-normalize; /* bring in normalize.css styles */
+
+:root {
+  --text-color: #333333;
+  --text-color-grey: #717171;
+  --white: #ffffff;
+  --black: #000000;
+  --green-color: #6fcf97;
+  --orange-color: #f2994a;
+  --red-color: #eb5757;
+  --bg-color: #e8e8e8;
+  --bg-color-dark: #696969;
+}
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Saira', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -12,4 +47,46 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+button {
+  display: inline-block;
+  cursor: pointer;
+  border: none;
 }

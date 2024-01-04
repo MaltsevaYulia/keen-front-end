@@ -1,0 +1,51 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 500px;
+  padding: 10px;
+
+  &__wrapper {
+    display: flex;
+    gap: 11px;
+    width: 100%;
+  }
+
+  &__inputBox {
+    display: flex;
+    flex-direction: column;
+
+    width: calc(50% - 5px);
+  }
+
+  &__btnBox {
+    display: flex;
+    gap: 11px;
+    width: 100%;
+  }
+
+  &__btn {
+    cursor: pointer;
+    width: 100%;
+    background-color: var(--bg-color-dark);
+    color: var(--white);
+    text-transform: uppercase;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 22px;
+    padding-right: 22px;
+    border-radius: 5px;
+
+    font-family: Saira;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    transition: all 250ms ease-in-out;
+
+    &:hover {
+      background-color: var(--text-color-grey);
+    }
+  }
+}
