@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkkeen_front_end=self.webpackChunkkeen_front_end||[]).push([[383],{8383:function(e,o,r){r.r(o),r.d(o,{default:function(){return c}});r(2791);var n="Footer_footer__PxxIj",t="Footer_footer__container__N6b7-",_="Footer_footer__text__N3YUG",s="Footer_footer__name__mbdEH",a=r(184),c=function(){return(0,a.jsx)("footer",{className:n,children:(0,a.jsxs)("div",{className:t,children:[(0,a.jsx)("p",{className:_,children:"Developer: "}),(0,a.jsx)("p",{className:s,children:"Yuliia Maltseva"})]})})}}}]);
+//# sourceMappingURL=383.32a88ea4.chunk.js.map
